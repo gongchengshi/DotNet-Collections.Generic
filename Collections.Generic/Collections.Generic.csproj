@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1DC4D59B-9707-4912-B32F-D066E57D3528}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Gongchengshi.Collections.Generic</RootNamespace>
+    <AssemblyName>Gongchengshi.Collections.Generic</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Test|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Test\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ArrayExtensions.cs" />
+    <Compile Include="CollectionAggregation.cs">
+      <DependentUpon>CollectionAggregation.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="DictionaryOfLists.cs" />
+    <Compile Include="ForEach.cs" />
+    <Compile Include="ICollectionExtensions.cs" />
+    <Compile Include="IDictionaryExtensions.cs" />
+    <Compile Include="IEnumerableExtensions.cs" />
+    <Compile Include="IEnumerableOfIEnumerableExtensions.cs" />
+    <Compile Include="IListExtensions.cs" />
+    <Compile Include="ILongArray.cs" />
+    <Compile Include="IObservableCollection.cs" />
+    <Compile Include="ISortedList.cs" />
+    <Compile Include="LongArray.cs" />
+    <Compile Include="MemoryMappedArray.cs" />
+    <Compile Include="Misc.cs" />
+    <Compile Include="ObservableList.cs" />
+    <Compile Include="PrefixTree.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReferenceCountedDictionary.cs" />
+    <Compile Include="MultiSet.cs" />
+    <Compile Include="SortedList.cs" />
+    <Compile Include="ObservableSortedList.cs" />
+    <Compile Include="Trie.cs" />
+    <Compile Include="Trie\GlobalSuppressions.cs" />
+    <Compile Include="Trie\ITrie.cs" />
+    <Compile Include="Trie\PatriciaTrie\MatchKind.cs" />
+    <Compile Include="Trie\PatriciaTrie\PatriciaSuffixTrie.cs" />
+    <Compile Include="Trie\PatriciaTrie\PatriciaTrie.cs" />
+    <Compile Include="Trie\PatriciaTrie\PatriciaTrieNode.cs" />
+    <Compile Include="Trie\PatriciaTrie\SplitResult.cs" />
+    <Compile Include="Trie\PatriciaTrie\StringPartition.cs" />
+    <Compile Include="Trie\PatriciaTrie\ZipResult.cs" />
+    <Compile Include="Trie\Trie\ConcurrentTrie.cs" />
+    <Compile Include="Trie\Trie\ConcurrentTrieNode.cs" />
+    <Compile Include="Trie\Trie\SuffixTrie.cs" />
+    <Compile Include="Trie\Trie\Trie.cs" />
+    <Compile Include="Trie\Trie\TrieNode.cs" />
+    <Compile Include="Trie\Trie\TrieNodeBase.cs" />
+    <Compile Include="TupleList.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CollectionAggregation.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CollectionAggregation.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DotNet-Common\Common\Common.csproj">
+      <Project>{DD93FCFF-3B20-4877-B00C-97905F718CDF}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
